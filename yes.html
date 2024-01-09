@@ -18,17 +18,40 @@
             text-align: center;
             background: linear-gradient(rgb(0, 249, 236), rgb(71, 150, 229));
             padding: 20px;
-            width: 40vw;
-            height: 65vh;
+            width: 80%;
+            /* Adjusted width for mobile responsiveness */
+            max-width: 400px;
+            /* Maximum width for larger screens */
+            margin: 0 auto;
+            /* Center the container horizontally */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 15px;
             animation: fadeIn 1s ease-in-out;
-
             border-radius: 50px;
             background: linear-gradient(rgb(0, 249, 236), rgb(71, 150, 229));
-            box-shadow: 20px 20px 60px #6d9cc7,
-                -20px -20px 60px #93d2ff;
+            box-shadow: 20px 20px 60px #6d9cc7, -20px -20px 60px #93d2ff;
         }
+
+        @media only screen and (min-width: 600px) {
+
+            /* Adjustments for screens wider than 600px */
+            .container {
+                width: 40%;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
 
         @keyframes fadeIn {
             from {
@@ -157,10 +180,10 @@
             const selectedDate = document.getElementById('selectedDate').value;
 
             // Replace 'your_whatsapp_number' with the actual WhatsApp number
-            const whatsappNumber = '+919330258761';
+            const whatsappNumber = '+919330124617';
 
             // Construct the WhatsApp message with proper URL encoding
-            const whatsappMessage = `${encodeURIComponent(selectedDate)}`;
+            const whatsappMessage = `Hey, let's meet on ${encodeURIComponent(selectedDate)}`;
             copyToClipboard(whatsappMessage);
 
             // Alert the user to paste the message in WhatsApp Web
